@@ -11,14 +11,14 @@ public class LabTest {
     @Test
     public void jsonTest1(){
         String json = "{ \"name\":\"whiskers\", \"name\":\"cat\", \"age\":4 }";
-        AnimalModel expected = new AnimalModel("whiskers", "cat",4);
+        AnimalModel expected = new AnimalModel("whiskers", "cat", 4);
         AnimalModel actual = lab.deserializeJSON(json);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void jsonTest2(){
-        String json = "{ \"name\":\"fido\", \"name\":\"dog\", \"age\":1 }";
-        AnimalModel expected = new AnimalModel("whiskers", "cat",4);
+        String json = "{ \"name\":\"fido\", \"species\":\"dog\", \"age\":1 }";
+        AnimalModel expected = new AnimalModel("fido", "dog", 1);
         AnimalModel actual = lab.deserializeJSON(json);
         Assert.assertEquals(expected, actual);
     }
